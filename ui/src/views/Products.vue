@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="margin-bottom: 10rem">
 
   <div>
     <Modal v-if="active.product_drawer">

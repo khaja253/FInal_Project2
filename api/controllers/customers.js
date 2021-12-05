@@ -1,5 +1,5 @@
 // import { v4 as uuidv4 } from 'uuid';
-import {Post} from '../models/post.js';
+import {Customer} from '../models/customer.js';
 //import { execute } from '../config/db';
 
 
@@ -10,12 +10,12 @@ let users = []
     // users.push({ ...user, id: uuidv4()})
     // res.send(`User with name ${user.firstName} to the database!`);
    
-    export const createNewPost = async (req,res,next) => {
+    export const createNewCustomer = async (req,res,next) => {
         console.log("came here")
-    let postB = req.body;
+    let customerB = req.body;
     console.log("came here")
-    const post = await Post.save(postB);//because save is async funtuion
-    console.log(post);
+    const customer = await Customer.save(customerB);//because save is async funtuion
+    console.log(customer);
     
 
     
@@ -24,7 +24,7 @@ let users = []
 
  export const getUsers = async (req,res,next) => {
     //console.log(users);
-    const users = await Post.get()
+    const users = await Customer.get()
     res.send(users);
 }
 

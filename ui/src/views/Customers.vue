@@ -10,15 +10,19 @@
             <thead style="background-color: black; color: white">
                 <tr>
                     <th style="min-width: 15rem; padding: 10px">Name</th>
+
                     <th style="min-width: 15rem; padding: 10px">Email</th>
-                    <th style="min-width: 15rem; padding: 10px">Role</th>
+                    <th style="min-width: 15rem; padding: 10px">Phone</th>
+                    <th style="min-width: 15rem; padding: 10px">Type</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="user in customers" :key="user.id">
                     <td style="min-width: 15rem; padding: 10px">{{user.firstName}} {{user.lastName}}</td>
                     <td style="min-width: 15rem; padding: 10px">{{user.email}}</td>
-                    <td style="min-width: 15rem; padding: 10px">{{user.role}}</td>
+                    <td style="min-width: 15rem; padding: 10px">{{user.phone}}</td>
+                    <td style="min-width: 15rem; padding: 10px">{{user.type}}</td>
                 </tr>
             </tbody>
         </table>
@@ -37,7 +41,8 @@ export default {
     },
     mounted(){
 setTimeout(async () => {
-    const result = await axios.get("http://localhost:5000/users");
+    const result = await axios.get("http://localhost:8080/users");
+    console.log()
     this.customers = result.data;
     
 });

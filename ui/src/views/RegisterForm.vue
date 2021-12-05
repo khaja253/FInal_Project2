@@ -14,7 +14,7 @@
            <div class="txt_field">
             <input  required v-model="lastName" />
             <span></span>
-            <label>Last Namr</label>
+            <label>Last Name</label>
           </div>
           <div class="txt_field">
             <input type="email" required v-model="email" />
@@ -31,8 +31,8 @@
           <div class="role">
             <label>Type:</label>
             <select v-model="role">
-              <option value="web developer">Regular</option>
-              <option value="web designer">Prime</option>
+              <option value="Regular">Regular</option>
+              <option value="Prime">Prime</option>
             </select>
           </div>
 
@@ -75,11 +75,13 @@ export default {
       console.log("number: ", this.number);
       console.log("role: ", this.role);
       console.log("terms accepted: ", this.terms);
-      await axios.post("http://localhost:5000/users", {
+      await axios.post("http://localhost:8080/users/post", {
         firstName: this.firstName,
         lastName: this.lastName,
         email: this.email,
-        number: this.number
+        number: this.number,
+        role: this.role,
+        terms: this.terms
       })
       this.$router.push("/customers")
     },

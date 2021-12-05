@@ -36,17 +36,18 @@
 
 <style scoped>
 footer {
-  position: absolute;
+position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   background: grey;
-  height: 5%;
+
   width: 100vw;
   font-family: "Open Sans";
   padding-top: 40px;
   color: white;
-  margin-bottom: 50px;
+
+
 }
 .footer-content {
   display: flex;
